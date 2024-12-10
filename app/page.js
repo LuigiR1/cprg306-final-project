@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import MovieList from "C:/cprg306/cprg306-final-project/app/components/MovieList.js";
-import SearchBar from "C:/cprg306/cprg306-final-project/app/components/SearchBar.js";
+import MovieList from "./components/MovieList";
+import SearchBar from "./components/SearchBar";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetchMovies("action"); 
+    fetchMovies("action");
   }, []);
 
   return (
