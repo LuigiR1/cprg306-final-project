@@ -1,10 +1,8 @@
+import Image from "next/image";
+
 export default async function MovieDetails({ params }) {
-  const { id } = params; // Directly destructure the `id` from `params`
+  const { id } = params;
 
-  // Log params to debug any issues
-  console.log("Params:", params);
-
-  // Fetch movie details using the `id`
   const url = `https://www.omdbapi.com/?i=${id}&apikey=7b8ff5c8`;
   const response = await fetch(url);
 
@@ -21,7 +19,13 @@ export default async function MovieDetails({ params }) {
   return (
     <div>
       <h1 className="text-2xl font-bold">{movie.Title}</h1>
-      <img src={movie.Poster} alt={movie.Title} className="mb-4" />
+      <Image
+        src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.png"}
+        alt={movie.Title}
+        width={300}
+        height={450}
+        className="mb-4"
+      />
       <p><strong>Plot:</strong> {movie.Plot}</p>
       <p><strong>Released:</strong> {movie.Released}</p>
       <p><strong>Genre:</strong> {movie.Genre}</p>
@@ -30,3 +34,4 @@ export default async function MovieDetails({ params }) {
     </div>
   );
 }
+

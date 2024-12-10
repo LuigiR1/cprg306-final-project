@@ -10,7 +10,7 @@ export default function Profile() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold">{user.name}'s Profile</h1>
+      <h1 className="text-2xl font-bold">{user.name} Profile Page</h1>
       <h2 className="text-xl font-semibold mt-4">Comments</h2>
       <ul>
         {user.comments.map((comment, index) => (
