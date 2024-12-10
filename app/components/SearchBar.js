@@ -20,7 +20,7 @@ export default function SearchBar({ onSearch }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search for movies..."
-        className="border p-2 rounded"
+        className=" text-black border p-2 rounded"
       />
       <button onClick={handleSearch} className="bg-blue-500 text-white px-4 py-2 rounded">
         Search

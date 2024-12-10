@@ -17,21 +17,36 @@ export default async function MovieDetails({ params }) {
   }
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold">{movie.Title}</h1>
-      <Image
-        src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.png"}
-        alt={movie.Title}
-        width={300}
-        height={450}
-        className="mb-4"
-      />
-      <p><strong>Plot:</strong> {movie.Plot}</p>
-      <p><strong>Released:</strong> {movie.Released}</p>
-      <p><strong>Genre:</strong> {movie.Genre}</p>
-      <p><strong>Director:</strong> {movie.Director}</p>
-      <p><strong>Actors:</strong> {movie.Actors}</p>
+    <div className="p-8 min-h-screen">
+      <h1 className="text-3xl font-bold text-center mb-6">{movie.Title}</h1>
+
+      <div className="flex flex-col items-center space-y-6">
+        <Image
+          src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.png"}
+          alt={movie.Title}
+          width={300}
+          height={450}
+          className="rounded shadow-lg"
+        />
+
+      <div className="border border-gray-300 bg-gray-800 p-6 rounded shadow-lg w-full max-w-2xl text-white">
+        <p className="mb-4">
+          <strong className="text-blue-400">Plot:</strong> {movie.Plot}
+        </p>
+        <p className="mb-2">
+          <strong className="text-blue-400">Released:</strong> {movie.Released}
+        </p>
+        <p className="mb-2">
+          <strong className="text-blue-400">Genre:</strong> {movie.Genre}
+        </p>
+        <p className="mb-2">
+          <strong className="text-blue-400">Director:</strong> {movie.Director}
+        </p>
+        <p>
+          <strong className="text-blue-400">Actors:</strong> {movie.Actors}
+        </p>
+        </div>
+      </div>
     </div>
   );
 }
-

@@ -8,7 +8,7 @@ export default function MovieCard({ movie }) {
       <img src={movie.Poster} alt={movie.Title} className="mb-2" />
       <h3 className="text-lg font-bold">{movie.Title}</h3>
       <p>{movie.Year}</p>
-      <Link href={`/movies/${movie.imdbID}`} className="text-blue-500 underline">
+      <Link href={`/movies/${movie.imdbID}`} className="text-blue-300 underline">
         Details
       </Link>
     </div>
